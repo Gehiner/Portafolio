@@ -24,10 +24,10 @@ const projects = [
     problem:
       "Los tutores repetían a diario las mismas tareas en el Backoffice: avisar a grupos, calificar y registrar asistencia.",
     solution:
-      "Una extensión que se integra con el Backoffice y añade barras de herramientas, mensajes masivos por WhatsApp, modales de calificación y control de asistencia.",
+      "Una extensión de Chrome para el Backoffice, con herramientas en Python: mensajes y credenciales por WhatsApp, calificación desde el reporte del grupo, reportes y boletines en PDF y un módulo de retención.",
     result:
-      "Está publicada en el portal de tutores premium de Kodland con instrucciones de instalación, y la sigo mejorando con lo que ellos necesitan.",
-    stack: ["JavaScript", "DOM", "Extensiones de Chrome"],
+      "La creé y hoy la desarrollo junto con otros tutores. Está publicada en el portal de tutores premium de Kodland, con release v1.1.0 y documentación de instalación.",
+    stack: ["JavaScript", "Manifest V3", "Python", "Playwright"],
     links: [
       ["Código en GitHub", "https://github.com/Gehiner/KodlandFaster"],
       ["Instalación en el portal de Kodland", "https://kodland-prm.tilda.ws/"],
