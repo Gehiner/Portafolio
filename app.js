@@ -26,9 +26,12 @@ const projects = [
     solution:
       "Una extensión que se integra con el Backoffice y añade barras de herramientas, mensajes masivos por WhatsApp, modales de calificación y control de asistencia.",
     result:
-      "La usan tutores de varios países de la región y la sigo mejorando con lo que ellos necesitan.",
+      "Está publicada en el portal de tutores premium de Kodland con instrucciones de instalación, y la sigo mejorando con lo que ellos necesitan.",
     stack: ["JavaScript", "DOM", "Extensiones de Chrome"],
-    links: [],
+    links: [
+      ["Código en GitHub", "https://github.com/Gehiner/KodlandFaster"],
+      ["Instalación en el portal de Kodland", "https://kodland-prm.tilda.ws/"],
+    ],
   },
   {
     id: "saas",
@@ -40,7 +43,12 @@ const projects = [
       "Una aplicación web con Next.js y React para crear y compartir invitaciones.",
     result: "Ya la usé en un caso real con las invitaciones de mi matrimonio.",
     stack: ["Next.js", "React"],
-    links: [],
+    links: [
+      ["Código en GitHub", "https://github.com/Gehiner/invitaciones-saas"],
+      // Demo en vivo: descomenta y pon aquí una invitación de EJEMPLO con datos
+      // ficticios (no la de tu matrimonio, porque el enlace da acceso a ella).
+      // ["Ver invitación de ejemplo", "https://invitaciones-saas.vercel.app/invitacion/ID?token=TOKEN"],
+    ],
   },
   {
     id: "shop",
@@ -52,7 +60,11 @@ const projects = [
       "Una tienda web con Python y Flask que cubre la lógica del servidor y las vistas.",
     result: "Superé el proceso y hoy enseño Python Pro.",
     stack: ["Python", "Flask"],
-    links: [],
+    links: [
+      // Cuando tengas la tienda, descomenta y reemplaza las URLs:
+      // ["Ver demo", "https://tu-tienda.vercel.app"],
+      // ["Código en GitHub", "https://github.com/Gehiner/NOMBRE-DEL-REPO"],
+    ],
   },
 ];
 // Para añadir un proyecto, copia una línea: ["Nombre","Descripción corta","https://enlace"],
@@ -375,7 +387,7 @@ function App() {
             h(
               "div",
               null,
-              h("b", null, "A NIVEL GLOBAL"),
+              h("b", null, "LATAM"),
               h("span", null, "tutores usan la extensión que construí"),
             ),
           ),
