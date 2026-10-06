@@ -84,7 +84,7 @@ const projects = [
     links: [
       [
         "Ver invitación",
-        "https://invitaciones-saas.vercel.app/invitacion/eb81f9f3-ea6c-4a46-95df-e6616c601025?token=688c6b5597308e0f3da4ab25bc29238c736be6562c22bc5df4556d8ae3b4c9a2",
+        "https://invitaciones-saas.vercel.app/invitacion/",
       ],
     ],
   },
