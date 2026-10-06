@@ -572,3 +572,24 @@ h2 {
     scroll-behavior: auto;
   }
 }
+/* ==========================================================
+   Información adicional de los proyectos
+   ========================================================== */
+
+.contribution {
+  border-left: 3px solid var(--acc);
+  padding: 0.9rem 1.1rem;
+  margin: 0 0 2rem;
+  background: color-mix(in srgb, var(--acc) 6%, transparent);
+  border-radius: 0 10px 10px 0;
+}
+
+.contribution h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  color: var(--acc);
+}
+
+.contribution p {
+  margin: 0;
+}

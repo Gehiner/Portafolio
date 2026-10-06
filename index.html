@@ -2,42 +2,88 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gehiner Sierra, desarrollador full stack junior</title>
-  <meta name="description" content="Desarrollador full stack junior en Bogotá. React, Next.js, Node.js y Python. Creé la extensión de Chrome que usan tutores de Kodland en LATAM.">
 
-  <!-- Aplica el tema guardado antes de pintar la página, para evitar parpadeos.
-       Si no hay uno guardado, usa la preferencia del sistema (claro u oscuro). -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <title>
+    Gehiner Sierra, desarrollador de software junior
+  </title>
+
+  <meta
+    name="description"
+    content="Portafolio de Gehiner Sierra, desarrollador de software junior especializado en JavaScript, React, Next.js y Python. Creador y colaborador de KodlandFaster, herramienta utilizada por todos los tutores de Kodland."
+  >
+
+  <!-- Aplica el tema guardado antes de pintar la página,
+       para evitar parpadeos. -->
   <script>
     try {
-      var t = localStorage.getItem("theme") ||
-        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      var t =
+        localStorage.getItem("theme") ||
+        (
+          matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches
+            ? "dark"
+            : "light"
+        );
+
       document.documentElement.dataset.theme = t;
     } catch (e) {
       document.documentElement.dataset.theme = "dark";
     }
   </script>
 
-  <!-- Tipografías: Bricolage Grotesque (títulos) e Instrument Sans (texto) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Tipografías -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
   <!-- Estilos -->
-  <link rel="stylesheet" href="styles.css">
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
 </head>
+
 <body>
+
   <!-- React dibuja aquí toda la página -->
   <div id="root"></div>
 
-  <!-- React 18 desde CDN (el orden importa: primero react, luego react-dom, luego app.js) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+  <!-- React 18 desde CDN -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"
+  ></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"
+  ></script>
 
   <!-- Contenido y lógica -->
   <script src="app.js"></script>
 
-  <!-- Barra de progreso de scroll (la mueve app.js) -->
-  <div id="bar" aria-hidden="true"></div>
+  <!-- Barra de progreso de scroll -->
+  <div
+    id="bar"
+    aria-hidden="true"
+  ></div>
+
 </body>
 </html>
