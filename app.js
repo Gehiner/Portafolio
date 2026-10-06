@@ -55,7 +55,7 @@ const projects = [
     ],
   },
 
-  {
+    {
     id: "saas",
 
     name: "SaaS para crear invitaciones",
@@ -83,8 +83,8 @@ const projects = [
 
     links: [
       [
-        "Ver invitación",
-        "https://invitaciones-saas.vercel.app/invitacion/",
+        "Código privado · Solicitar acceso",
+        "mailto:gehinerferley@gmail.com?subject=Solicitud%20de%20acceso%20al%20c%C3%B3digo%20-%20SaaS%20Invitaciones&body=Hola%20Gehiner,%0A%0AMe%20gustar%C3%ADa%20solicitar%20acceso%20al%20c%C3%B3digo%20del%20proyecto%20SaaS%20de%20invitaciones.%0A%0AGracias.",
       ],
     ],
   },
