@@ -1,0 +1,574 @@
+/* Portafolio de Gehiner Sierra: hoja de estilos.
+   Orden: variables, base, componentes por sección, accesibilidad. */
+
+/* ==========================================================
+   Variables de color (tema claro por defecto). Cambia aquí la paleta.
+   ========================================================== */
+:root {
+  --bg: #f1f6f4;
+  --fg: #0a2321;
+  --mut: #51655f;
+  --line: #cbd8d3;
+  --acc: #0b6b5f;
+  --on: #fff;
+  --card: #ffffff;
+}
+/* Tema oscuro: sobrescribe las variables */
+[data-theme="dark"] {
+  --bg: #07201f;
+  --fg: #e8f3ef;
+  --mut: #9db5ae;
+  --line: #1e3d3a;
+  --acc: #ffb020;
+  --on: #07201f;
+  --card: #0c2b29;
+}
+/* ==========================================================
+   Base y reseteo
+   ========================================================== */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font:
+    400 1.0625rem/1.65 "Instrument Sans",
+    system-ui,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+a {
+  color: inherit;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 3px solid var(--acc);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.wrap {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+/* ==========================================================
+   Barra de progreso de scroll
+   ========================================================== */
+#bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--acc);
+  width: 0;
+  z-index: 30;
+}
+/* ==========================================================
+   Barra de navegación
+   ========================================================== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+  gap: 1rem;
+}
+.logo {
+  font:
+    800 1.25rem "Bricolage Grotesque",
+    sans-serif;
+  text-decoration: none;
+}
+.links {
+  display: none;
+  gap: 1.5rem;
+}
+.links a {
+  text-decoration: none;
+  color: var(--mut);
+  font-weight: 500;
+}
+.links a:hover {
+  color: var(--fg);
+}
+@media (min-width: 48rem) {
+  .links {
+    display: flex;
+  }
+}
+.tools {
+  display: flex;
+  gap: 0.5rem;
+}
+/* ==========================================================
+   Botones
+   ========================================================== */
+.btn {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.btn:hover {
+  border-color: var(--acc);
+}
+.btn.main {
+  background: var(--acc);
+  color: var(--on);
+  border-color: var(--acc);
+  font-weight: 600;
+}
+kbd {
+  font:
+    500 0.8rem "Instrument Sans",
+    sans-serif;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  padding: 0 0.35rem;
+  opacity: 0.7;
+  margin-left: 0.5rem;
+}
+/* ==========================================================
+   Portada (hero)
+   ========================================================== */
+.hero {
+  padding: clamp(4rem, 12vw, 9rem) 0 clamp(3rem, 8vw, 6rem);
+  position: relative;
+  background: radial-gradient(
+    34rem circle at var(--mx, 70%) var(--my, 10%),
+    color-mix(in srgb, var(--acc) 16%, transparent),
+    transparent 60%
+  );
+}
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  font-size: 0.95rem;
+  color: var(--mut);
+}
+.status i {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--acc);
+}
+h1 {
+  font:
+    800 clamp(3.6rem, 15vw, 11rem)/0.9 "Bricolage Grotesque",
+    sans-serif;
+  letter-spacing: -0.045em;
+  margin: 1.5rem 0 0;
+}
+h1 .l {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+h1 .l span {
+  display: block;
+  animation: up 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+h1 .l:nth-child(2) span {
+  animation-delay: 0.12s;
+  color: var(--acc);
+}
+@keyframes up {
+  from {
+    transform: translateY(105%);
+  }
+}
+.lead {
+  max-width: 38rem;
+  font-size: clamp(1.15rem, 2.3vw, 1.45rem);
+  line-height: 1.5;
+  color: var(--mut);
+  margin: 2rem 0;
+}
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.cta .btn {
+  padding: 0.8rem 1.4rem;
+  font-size: 1rem;
+}
+.facts {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+@media (min-width: 40rem) {
+  .facts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.facts b {
+  display: block;
+  font:
+    700 2.4rem/1 "Bricolage Grotesque",
+    sans-serif;
+  color: var(--acc);
+}
+.facts span {
+  color: var(--mut);
+}
+/* ==========================================================
+   Secciones y títulos
+   ========================================================== */
+section.s {
+  padding: 5rem 0;
+  border-top: 1px solid var(--line);
+}
+h2 {
+  font:
+    800 clamp(2.2rem, 5.5vw, 3.5rem)/1 "Bricolage Grotesque",
+    sans-serif;
+  letter-spacing: -0.03em;
+  margin: 0 0 2.5rem;
+}
+/* ==========================================================
+   Casos de estudio (acordeón de proyectos)
+   ========================================================== */
+.case {
+  border-top: 1px solid var(--line);
+}
+.case:last-of-type {
+  border-bottom: 1px solid var(--line);
+}
+.case > button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 1.6rem 0;
+}
+.case h3 {
+  font:
+    700 clamp(1.4rem, 3.4vw, 2.1rem)/1.15 "Bricolage Grotesque",
+    sans-serif;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.case small {
+  display: block;
+  color: var(--mut);
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+  font-weight: 400;
+}
+.plus {
+  flex: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  transition:
+    transform 0.25s,
+    background 0.25s;
+}
+.case[data-open="true"] .plus {
+  transform: rotate(45deg);
+  background: var(--acc);
+  color: var(--on);
+  border-color: var(--acc);
+}
+.body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s;
+}
+.case[data-open="true"] .body {
+  grid-template-rows: 1fr;
+}
+.body > div {
+  overflow: hidden;
+}
+.cols {
+  display: grid;
+  gap: 1.5rem;
+  padding: 0 0 2rem;
+}
+@media (min-width: 48rem) {
+  .cols {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+.cols h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  color: var(--acc);
+}
+.cols p {
+  margin: 0;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-bottom: 2rem;
+}
+.chips span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.2rem 0.85rem;
+  font-size: 0.9rem;
+  color: var(--mut);
+}
+/* ==========================================================
+   Trabajos anteriores
+   ========================================================== */
+.old {
+  margin-top: 2rem;
+  color: var(--mut);
+}
+.old a {
+  color: var(--acc);
+  font-weight: 500;
+}
+/* ==========================================================
+   Trayectoria
+   ========================================================== */
+.job {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+.job:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.job time {
+  color: var(--mut);
+}
+.job h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.job p {
+  margin: 0.2rem 0 0;
+  max-width: 40rem;
+}
+@media (min-width: 44rem) {
+  .job {
+    grid-template-columns: 12rem 1fr;
+    gap: 2rem;
+  }
+}
+/* ==========================================================
+   Tecnologías (tarjetas)
+   ========================================================== */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 44rem) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.5rem;
+}
+.card h3 {
+  margin: 0 0 0.5rem;
+  font:
+    700 1.2rem "Bricolage Grotesque",
+    sans-serif;
+}
+.card p {
+  margin: 0;
+  color: var(--mut);
+}
+/* ==========================================================
+   Contacto y pie de página
+   ========================================================== */
+.contact {
+  background: var(--acc);
+  color: var(--on);
+  padding: 5rem 0 2.5rem;
+}
+.contact h2 {
+  margin-bottom: 1rem;
+}
+.contact p {
+  font-size: 1.25rem;
+  max-width: 34rem;
+  margin: 0 0 2rem;
+  opacity: 0.85;
+}
+.mail {
+  font:
+    800 clamp(1.5rem, 6vw, 3.6rem)/1.1 "Bricolage Grotesque",
+    sans-serif;
+  letter-spacing: -0.03em;
+  word-break: break-word;
+}
+.alt {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem 0 3rem;
+  font-weight: 600;
+}
+.contact small {
+  opacity: 0.7;
+}
+/* ==========================================================
+   Menú de comandos (Ctrl + K)
+   ========================================================== */
+.ov {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 12, 12, 0.6);
+  z-index: 40;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 12vh 1rem 1rem;
+}
+.pal {
+  width: 100%;
+  max-width: 34rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+.pal input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: none;
+  color: var(--fg);
+  padding: 1.1rem 1.25rem;
+  font: inherit;
+  outline: none;
+}
+.pal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  max-height: 50vh;
+  overflow: auto;
+}
+.pal li button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 0.7rem 0.85rem;
+}
+.pal li[aria-selected="true"] button {
+  background: var(--acc);
+  color: var(--on);
+}
+.sub {
+  font:
+    700 1.5rem "Bricolage Grotesque",
+    sans-serif;
+  letter-spacing: -0.02em;
+  margin: 3.5rem 0 1.25rem;
+}
+/* ==========================================================
+   Lista "Más proyectos"
+   ========================================================== */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.list li {
+  border-top: 1px solid var(--line);
+}
+.list li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.list a {
+  display: grid;
+  gap: 0.15rem 1.5rem;
+  padding: 1.15rem 0.25rem;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    padding 0.2s;
+}
+.list a:hover,
+.list a:focus-visible {
+  background: var(--card);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.list .n {
+  font:
+    700 1.25rem "Bricolage Grotesque",
+    sans-serif;
+  letter-spacing: -0.01em;
+}
+.list .d {
+  color: var(--mut);
+}
+.list .go {
+  color: var(--acc);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+@media (min-width: 44rem) {
+  .list a {
+    grid-template-columns: 14rem 1fr auto;
+    align-items: center;
+  }
+}
+/* ==========================================================
+   Accesibilidad: sin animaciones si el usuario lo pide
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
